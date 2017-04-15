@@ -1,0 +1,21 @@
+{
+  "provider": {
+    "name": "spring-boot-provider"
+  },
+  "consumer": {
+    "name": "spring-boot-consumer"
+  },
+  "interactions": [
+    {
+      "provider_state": "default",
+      "description": "a request to /sample",
+      "request": {
+        "method": "GET",
+        "path": "/rest/provider/sample"
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ]
+}

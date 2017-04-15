@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>java-pact-sample</artifactId>
+        <groupId>com.marmulasse</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>java-pact-sample-provider</artifactId>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>1.5.2.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>2.4.7</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>au.com.dius</groupId>
+            <artifactId>pact-jvm-provider-junit_2.11</artifactId>
+            <version>3.3.7</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+<!--
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>au.com.dius</groupId>
+                <artifactId>pact-jvm-provider-maven_2.11</artifactId>
+                <version>3.3.4</version>
+                <configuration>
+                    <serviceProviders>
+                        &lt;!&ndash; You can define as many as you need, but each must have a unique name &ndash;&gt;
+                        <serviceProvider>
+                            <name>provider1</name>
+                            &lt;!&ndash; All the provider properties are optional, and have sensible defaults (shown below) &ndash;&gt;
+                            <protocol>http</protocol>
+                            <host>localhost</host>
+                            <port>8181</port>
+                            <path>/</path>
+                            <consumers>
+                                &lt;!&ndash; Again, you can define as many consumers for each provider as you need, but each must have a unique name &ndash;&gt;
+                                <consumer>
+                                    <name>consumer1</name>
+                                    &lt;!&ndash;  currently supports a file path using pactFile or a URL using pactUrl &ndash;&gt;
+                                    <pactFile>/Users/dpanza/GitProjects/java-pact-sample/provider/src/test/resources/consumer_pact.json</pactFile>
+                                </consumer>
+                            </consumers>
+                        </serviceProvider>
+                    </serviceProviders>
+                    <pactBrokerUrl/>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+-->
+</project>
