@@ -4,6 +4,7 @@ import au.com.dius.pact.provider.junit.PactRunner;
 import au.com.dius.pact.provider.junit.Provider;
 import au.com.dius.pact.provider.junit.State;
 import au.com.dius.pact.provider.junit.VerificationReports;
+import au.com.dius.pact.provider.junit.loader.PactBroker;
 import au.com.dius.pact.provider.junit.loader.PactFolder;
 import au.com.dius.pact.provider.junit.loader.PactSource;
 import au.com.dius.pact.provider.junit.target.HttpTarget;
@@ -18,7 +19,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @RunWith(PactRunner.class)
 @Provider("spring-boot-provider")
-@PactFolder("pacts")
+//@PactFolder("pacts")
+@PactBroker(host = "localhost", port = "80")
 @VerificationReports({"console"})
 public class ProviderControllerTest {
 
