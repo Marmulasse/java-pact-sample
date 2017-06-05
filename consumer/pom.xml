@@ -38,9 +38,11 @@
                         <phase>test</phase>
                         <goals><goal>upload-pacts</goal></goals>
                         <configuration>
-                            <!--<brokerUrl>ssh://gitlab/pact-repo.git</brokerUrl>-->
-                            <brokerUrl>http://localhost:80</brokerUrl>
+                            <brokerUrl>https://github.com/Marmulasse/pact-repository.git</brokerUrl>
+                            <!--<brokerUrl>http://localhost:80</brokerUrl>-->
                             <pacts>${project.build.directory}/pacts</pacts>
+                            <username>marmulasse</username>
+                            <password>${gitpass}</password>
                         </configuration>
                     </execution>
                 </executions>
@@ -68,7 +70,7 @@
         <dependency>
             <groupId>au.com.dius</groupId>
             <artifactId>pact-jvm-consumer-junit_2.11</artifactId>
-            <version>3.3.6</version>
+            <version>3.3.7</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -80,6 +82,12 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>fluent-hc</artifactId>
+            <version>4.5.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
